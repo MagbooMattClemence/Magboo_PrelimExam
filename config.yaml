@@ -2,7 +2,11 @@
 - hosts: all
   become: true
   tasks:
-  
+
+  - name: update repository index
+    apt: 
+      update_cache: yes
+
   - name: install pip3 package
     apt:
       name: python3-pip
@@ -14,3 +18,7 @@
   - name: install mariadb package
     apt:
       name: mariadb-server
+  
+  - name: instal java open-jdk
+    apt:
+      name: default-jdk
